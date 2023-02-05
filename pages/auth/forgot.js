@@ -11,7 +11,7 @@ import Link from "next/link";
 import axios from "axios";
 import CustomDotLoader from "../../components/loaders/dotLoader";
 
-const forgot = () => {
+const Forgot = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -99,4 +99,4 @@ const forgot = () => {
   );
 };
 
-export default forgot;
+export default Forgot;

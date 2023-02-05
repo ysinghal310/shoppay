@@ -13,7 +13,7 @@ import CustomDotLoader from "../../../components/loaders/dotLoader";
 import jwt from "jsonwebtoken";
 import { signIn, getSession } from "next-auth/react";
 
-const reset = ({ user_id }) => {
+const Reset = ({ user_id }) => {
   const [password, setPassword] = useState("");
   const [conf_password, setConf_password] = useState("");
   const [error, setError] = useState(false);
@@ -120,7 +120,7 @@ const reset = ({ user_id }) => {
   );
 };
 
-export default reset;
+export default Reset;
 
 export async function getServerSideProps(context) {
   const { query, req } = context;

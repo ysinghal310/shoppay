@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/header";
 
-const cart = () => {
+const Cart = () => {
   return (
     <>
       <Header
@@ -17,4 +17,4 @@ const cart = () => {
   );
 };
 
-export default cart;
+export default Cart;

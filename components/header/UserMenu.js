@@ -17,7 +17,14 @@ const UserMenu = ({ session }) => {
           <div className={styles.col}>
             <span>Welcome Back,</span>
             <h3>{session.user.name}</h3>
-            <span onClick={() => signOut()}>Sign Out</span>
+            <span
+              onClick={() => {
+                e.preventDefault();
+                return signOut();
+              }}
+            >
+              Sign Out
+            </span>
           </div>
         </div>
       ) : (

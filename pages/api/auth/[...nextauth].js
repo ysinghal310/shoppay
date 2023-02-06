@@ -58,6 +58,9 @@ export default NextAuth({
     // Passwordless / email sign in
   ],
   callbacks: {
+    redirect: async (url, baseUrl) => {
+      return Promise.resolve(url);
+    },
     async session({ session, token }) {
       let user = await User.findById(token.sub);
       session.user.id = user.sub || user._id.toString();

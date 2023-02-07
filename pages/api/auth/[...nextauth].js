@@ -10,6 +10,9 @@ import User from "../../../models/User";
 import bcrypt from "bcrypt";
 import db from "../../../utils/db";
 
+
+db.connectDb();
+
 export default NextAuth({
   providers: [
     CredentialsProvider({

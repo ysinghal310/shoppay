@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import { signOut, signIn } from "next-auth/react";
 
 const UserMenu = ({ session }) => {
-  console.log(session);
   return (
     <div className={styles.menu}>
       <h4>Welcome to Shoppay !</h4>

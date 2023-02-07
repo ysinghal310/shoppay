@@ -13,8 +13,6 @@ import db from "../../../utils/db";
 export default NextAuth({
   providers: [
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
-
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
@@ -22,7 +20,6 @@ export default NextAuth({
       },
       async authorize(credentials, req) {
         db.connectDb();
-        console.log(credentials, "CDSREFEFGGSG");
         const email = credentials.email;
         const password = credentials.password;
         const user = await User.findOne({ email });
@@ -34,7 +31,6 @@ export default NextAuth({
         }
       },
     }),
-    // OAuth authentication providers...
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
@@ -48,7 +44,6 @@ export default NextAuth({
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
       issuer: process.env.AUTH0_ISSUER,
     }),
-    // Passwordless / email sign in
   ],
   callbacks: {
     async session({ session, token }) {

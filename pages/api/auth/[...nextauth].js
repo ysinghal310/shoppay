@@ -10,7 +10,6 @@ import User from "../../../models/User";
 import bcrypt from "bcrypt";
 import db from "../../../utils/db";
 
-
 db.connectDb();
 
 export default NextAuth({
@@ -18,11 +17,11 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        db.connectDb();
+        await db.connectDb();
         const email = credentials.email;
         const password = credentials.password;
         const user = await User.findOne({ email });

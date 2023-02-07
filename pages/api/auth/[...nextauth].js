@@ -10,18 +10,19 @@ import User from "../../../models/User";
 import bcrypt from "bcrypt";
 import db from "../../../utils/db";
 
-db.connectDb();
-
 export default NextAuth({
   providers: [
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
+
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
+        db.connectDb();
+        console.log(credentials, "CDSREFEFGGSG");
         const email = credentials.email;
         const password = credentials.password;
         const user = await User.findOne({ email });

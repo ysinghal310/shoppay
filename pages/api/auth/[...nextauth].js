@@ -9,8 +9,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "../../../models/User";
 import bcrypt from "bcrypt";
 import db from "../../../utils/db";
-import { sendEmail } from "../../../utils/sendEmail";
-import { resetEmailTemplate } from "../../../emails/resetEmailTemplate";
 
 db.connectDb();
 
@@ -61,8 +59,7 @@ export default NextAuth({
   ],
   callbacks: {
     redirect: async (url, baseUrl) => {
-      sendEmail("gangbuster74@gmail.com", url, "", "Reset your Password", resetEmailTemplate);
-      return Promise.resolve(url)
+      return Promise.resolve(baseUrl)
     },
     async session({ session, token }) {
       let user = await User.findById(token.sub);

@@ -59,7 +59,7 @@ export default NextAuth({
   ],
   callbacks: {
     redirect: async (url, baseUrl) => {
-      return Promise.resolve(baseUrl)
+      return Promise.resolve(url)
     },
     async session({ session, token }) {
       let user = await User.findById(token.sub);

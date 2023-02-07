@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, session }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SessionProvider session={session}  basePath="/api/auth">
+      <SessionProvider session={session}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <ToastContainer

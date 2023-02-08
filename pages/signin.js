@@ -99,13 +99,12 @@ const Signin = ({ providers = [], callbackUrl, csrfToken }) => {
       };
       const res = await signIn("credentials", options);
       setUser({ ...user, success: "", error: "" });
-      setLoading(false);
       Router.push("/");
       setTimeout(() => {
         toast.info(data.message);
       }, 3000);
-    } catch (error) {
       setLoading(false);
+    } catch (error) {
       toast.error(error.response.data.message);
     }
   };

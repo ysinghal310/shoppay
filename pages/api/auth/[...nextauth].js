@@ -21,7 +21,7 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        // await db.connectDb();
+        await db.connectDb();
         const email = credentials.email;
         const password = credentials.password;
         const user = await User.findOne({ email });

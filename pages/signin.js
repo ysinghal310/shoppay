@@ -92,8 +92,6 @@ const Signin = ({ providers = [], callbackUrl, csrfToken }) => {
         password,
       });
 
-      setLoading(false);
-
       let options = {
         redirect: false,
         email: email,
@@ -101,6 +99,7 @@ const Signin = ({ providers = [], callbackUrl, csrfToken }) => {
       };
       const res = await signIn("credentials", options);
       setUser({ ...user, success: "", error: "" });
+      setLoading(false);
       Router.push("/");
       setTimeout(() => {
         toast.info(data.message);
@@ -120,11 +119,11 @@ const Signin = ({ providers = [], callbackUrl, csrfToken }) => {
     };
     const res = await signIn("credentials", options);
     setUser({ ...user, success: "", error: "" });
-    setLoading(false);
     if (res?.error) {
       setLoading(false);
       setUser({ ...user, login_error: res?.error });
     } else {
+      setLoading(false);
       return Router.push(callbackUrl || "/");
     }
   };
@@ -300,4 +299,3 @@ export async function getServerSideProps(context) {
 }
 
 //this is dev
-

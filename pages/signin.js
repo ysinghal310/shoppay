@@ -105,6 +105,7 @@ const Signin = ({ providers = [], callbackUrl, csrfToken }) => {
       }, 3000);
       setLoading(false);
     } catch (error) {
+      setLoading(false);
       toast.error(error.response.data.message);
     }
   };

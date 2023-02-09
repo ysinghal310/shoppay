@@ -71,7 +71,7 @@ const SignInUser = async ({ password, user }) => {
   }
   const testPassword = await bcrypt.compare(password, user.password);
   if (!testPassword) {
-    throw new Error("Invalid Credentials!");
+    throw new Error("Invalid Credentials!");//
   }
   return user;
 };

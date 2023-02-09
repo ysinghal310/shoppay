@@ -31,6 +31,4 @@ const Main = () => {
   );
 };
 
-// public\images\shoppay-logo.png
-
 export default Main;

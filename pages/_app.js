@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps, session }) {
   return (
     <>
       <Head>
-        <title>Shoppay</title>
+        <title>Shippr</title>
         <meta
           name="description"
           content="Best online shopping store for your daily needs"

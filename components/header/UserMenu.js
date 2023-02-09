@@ -5,7 +5,7 @@ import { signOut, signIn } from "next-auth/react";
 const UserMenu = ({ session }) => {
   return (
     <div className={styles.menu}>
-      <h4>Welcome to Shoppay !</h4>
+      <h4>Welcome to Shippr !</h4>
       {session ? (
         <div className={styles.flex}>
           <img

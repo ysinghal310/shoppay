@@ -2,8 +2,18 @@ $blue-color: #2f82ff;
 $grey-color: #f8f8f8;
 $light-error-color: #fd010169;
 $error-color: #ed4337;
-$success-color:#6cc070;
+$success-color: #6cc070;
 $shadow-1: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
+$yellow-color: #fac80f;
+$voilet-color: #5a31f4;
+$redish-color: #f15f6f;
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
 .btn_primary {
   display: flex;
@@ -35,4 +45,197 @@ $shadow-1: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+// ------------------------------------------Swippers---
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  &:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+      display: grid;
+    }
+  }
+}
+
+.mainSwiper,
+.offers_swiper,.userMenu__swiper{
+  .swiper {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+  .swiper-slide img {
+    height: 300px !important;
+    border-radius: 10px !important;
+    box-shadow: $shadow-1;
+  }
+  .swiper-pagination-bullet {
+    width: 9px !important;
+    border-radius: 5px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: $blue-color !important;
+    width: 15px !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff !important;
+    transform: scale(0.5) !important;
+    width: 50px !important;
+    height: 80px !important;
+    transition: 0.2s;
+    background: #66666669 !important;
+    display: none;
+    place-items: center;
+  }
+  .swiper-button-prev {
+    left: -13px;
+  }
+  .swiper-button-next {
+    right: -13px;
+  }
+}
+
+.offers_swiper {
+  max-width: 535px;
+  transform: translateX(33%);
+  .swiper-pagination {
+    display: none;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px !important;
+    border-radius: 10px !important;
+    height: 90% !important;
+    margin-top: 0.6rem !important;
+    box-shadow: $shadow-1;
+    overflow: hidden;
+    &:hover {
+      transform: scale(1.03);
+      transition: 0.2s;
+    }
+    span {
+      position: absolute;
+      color: #fff;
+      &:first-of-type {
+        bottom: 10px;
+        width: 90px;
+        height: 25px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        background: $yellow-color;
+        box-shadow: $shadow-1;
+      }
+      &:last-of-type {
+        font-style: italic;
+        top: 0px;
+        right: 0px;
+        background: $redish-color;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: $shadow-1;
+      }
+    }
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+
+.userMenu__swiper {
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .swiper-slide img{
+   object-fit: contain;
+  }
+
+  .swiper-slide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+  }
+
+  .swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+  }
+
+  .swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+  }
+
+  .swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+  }
+
+  .swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+  }
+
+  .swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+  }
+
+  .swiper-slide:nth-child(9n) {
+    background-color: rgb(218, 12, 218);
+  }
+
+  .swiper-slide:nth-child(10n) {
+    background-color: rgb(54, 94, 77);
+  }
 }

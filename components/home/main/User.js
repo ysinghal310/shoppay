@@ -82,8 +82,8 @@ const User = () => {
             className="userMenu__swiper"
             style={{ maxWidth: "180px", height: "180px", marginTop: "3rem" }}
           >
-            {userSwiperArray.map((item) => (
-              <SwiperSlide>
+            {userSwiperArray.map((item,i) => (
+              <SwiperSlide key={i}>
                 <Link href="">
                   <img src={item.image} alt="" />
                 </Link>
